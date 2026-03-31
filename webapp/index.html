@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>NHIS POC 대시보드</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body {
+      font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+      font-style: normal;
+    }
+    .activity-feed ul li {
+      font-style: normal;
+    }
+    .dashboard button {
+      appearance: none;
+      border: 2px solid #999;
+      background: #eee;
+      color: #333;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      float: right;
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+    .dashboard button:hover {
+      background: #444;
+      color: #fff;
+      border-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dashboard">
+
+	<div class="profile">
+                <div style="text-align: center; padding: 10px;"><img src="nhis.png" alt="NHIS Logo" style="height: 80px;"></div>
+		<p><h3>오늘도 안정적인 시스템 운영을 위해!</h3></p>
+	</div>
+
+	<div class="schedule-table">
+		<button title="닫기">×</button>
+		<h2>주간 점검 일정</h2>
+		<div class="table-wrap">
+			<table>
+				<tr><th>요일</th><th>점검 항목</th><th>시간</th></tr>
+				<tr><td>월요일</td><td>WebLogic 상태 확인</td><td>09:00</td></tr>
+				<tr><td>화요일</td><td>OHS 로그 점검</td><td>10:00</td></tr>
+				<tr><td>수요일</td><td>Kubernetes Pod 상태 확인</td><td>09:30</td></tr>
+				<tr><td>목요일</td><td>SSL 인증서 유효성 점검</td><td>09:00</td></tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="exercise-table">
+		<button title="닫기">×</button>
+		<h2>최근 수행 작업</h2>
+		<div class="table-wrap">
+			<table>
+				<tr><th>작업</th><th>소요 시간</th></tr>
+				<tr><td>도메인 재시작</td><td>15분</td></tr>
+				<tr><td>로그 백업</td><td>20분</td></tr>
+				<tr><td>노드 점검</td><td>10분</td></tr>
+				<tr><td>패치 적용</td><td>30분</td></tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="calories">
+		<button title="닫기">×</button>
+		<h2>알림 수치</h2>
+		<div><strong>오늘 발생:</strong> 2건</div>
+		<div><strong>이번 주:</strong> 8건</div>
+		<div><strong>이번 달:</strong> 34건</div>
+	</div>
+
+	<div class="personal-bests">
+		<button title="닫기">×</button>
+		<h2>베스트 실적</h2>
+		<ul>
+			<li>가장 빠른 점검 완료: 12분</li>
+			<li>최다 동시 점검 처리: 4건</li>
+			<li>연속 무장애 운영일: 15일</li>
+		</ul>
+	</div>
+
+	<div class="challenges">
+		<button title="닫기">×</button>
+		<h2>운영 과제</h2>
+		<ul>
+			<li>5일 연속 무오류 점검 달성</li>
+			<li>WKO 자동화 배포 검증 완료</li>
+			<li>SSL 인증서 자동 갱신 구현</li>
+		</ul>
+	</div>
+
+	<div class="activity-feed">
+		<button title="닫기">×</button>
+		<h2>팀 활동 로그</h2>
+		<ul>
+			<li>홍길동님이 OHS 구성 가이드를 공유했습니다.</li>
+			<li>김민수님이 WebLogic 도메인 백업 스크립트를 등록했습니다.</li>
+			<li>박지현님이 모니터링 대시보드 개선 의견을 제출했습니다.</li>
+		</ul>
+	</div>
+
+</div>
+
+<script>
+  // 닫기 버튼 동작 구현
+  document.querySelectorAll('.dashboard button').forEach(button => {
+    button.addEventListener('click', () => {
+      const box = button.closest('div');
+      if (box) box.remove();
+    });
+  });
+</script>
+
+</body>
+</html>
