@@ -1,2 +1,2 @@
-# k8s_test - ohs auxiliary image
-ohs_auxiliary_image
+# k8s_test - ohs webapp image
+ohs_webapp_image_repo
